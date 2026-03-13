@@ -5,13 +5,13 @@ function mockcase(str) {
     }
     if (!str.includes(" ")) {
         const randstp = Math.floor(Math.random() * 2) + 2;
-        for (let i = 1;i<strarr.length;i+=randstp) {
+        for (let i = 1; i < strarr.length; i += randstp) {
             strarr[i] = strarr[i].toUpperCase();
         }
     }
     else {
         let randstp = Math.floor(Math.random() * 2) + 2;
-        for (let i = 1;i<strarr.length;i+=randstp) {
+        for (let i = 1; i < strarr.length; i += randstp) {
             if (strarr[i] !== " ") {
                 strarr[i] = strarr[i].toUpperCase();
             }
@@ -37,7 +37,7 @@ const input = document.querySelector("#textInp");
 const copyBtn = document.querySelector("#copyBtn");
 
 document.addEventListener("DOMContentLoaded", () => {
-    input.addEventListener("keyup",(event) => {
+    input.addEventListener("keyup", (event) => {
         if (event.key === "Enter") {
             button.click();
         }

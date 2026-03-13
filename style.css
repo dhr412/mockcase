@@ -1,37 +1,131 @@
+:root {
+    --primary: #6366f1;
+    --primary-hover: #818cf8;
+    --bg: #0f172a;
+    --card-bg: #1e293b;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --border: #334155;
+    --shadow: 0 20px 25px -5px rgb(0 0 0 / 0.3), 0 8px 10px -6px rgb(0 0 0 / 0.3);
+}
+
 body {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--bg);
+    color: var(--text-main);
     margin: 0;
-    padding: 0;
-    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
 }
-input[type="submit"], #copyBtn {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-left: 5px;
+
+.container {
+    background: var(--card-bg);
+    padding: 2.5rem;
+    border-radius: 1.25rem;
+    box-shadow: var(--shadow);
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+    border: 1px solid var(--border);
 }
-#copyBtn {
-    background-color: #6c757d;
+
+h1 {
+    margin: 0 0 0.5rem 0;
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    background: linear-gradient(to right, #818cf8, #c084fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
-input[type="submit"]:hover {
-    background-color: #0056b3;
+
+.subtitle {
+    color: var(--text-muted);
+    margin-bottom: 2.5rem;
+    font-size: 0.9375rem;
 }
-#copyBtn:hover {
-    background-color: #5a6268;
+
+.input-group {
+    margin-bottom: 1.5rem;
 }
+
 #textInp {
-    width: 200px;
-    padding: 10px;
-    border: 2.5px solid #ddd;
-    border-radius: 5px;
+    width: 100%;
+    padding: 0.875rem 1.125rem;
+    background-color: #0f172a;
+    border: 2px solid var(--border);
+    border-radius: 0.75rem;
+    font-size: 1rem;
+    color: var(--text-main);
+    transition: all 0.2s;
     outline: none;
-    font-size: 18px;
-    color: #333;
-    display: block;
-    margin-bottom: 10px;
-    margin-left: 10px;
+    box-sizing: border-box;
+}
+
+#textInp:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.2);
+}
+
+.button-group {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+input[type="submit"], #copyBtn {
+    flex: 1;
+    padding: 0.875rem 1.25rem;
+    border-radius: 0.75rem;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 0.875rem;
+}
+
+input[type="submit"] {
+    background-color: var(--primary);
+    color: white;
+}
+
+input[type="submit"]:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-1px);
+}
+
+#copyBtn {
+    background-color: #334155;
+    color: #f1f5f9;
+}
+
+#copyBtn:hover {
+    background-color: #475569;
+    color: #ffffff;
+}
+
+.output-area {
+    min-height: 3.5rem;
+    padding: 1.25rem;
+    background: #0f172a;
+    border: 1px dashed var(--border);
+    border-radius: 0.75rem;
+    word-break: break-all;
+    font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+    font-size: 1.125rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #e2e8f0;
+}
+
+.output-area:empty::before {
+    content: "Result will appear here...";
+    color: var(--text-muted);
+    font-family: 'Inter', sans-serif;
+    font-style: italic;
+    font-size: 0.875rem;
 }

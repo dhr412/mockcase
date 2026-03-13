@@ -1,20 +1,31 @@
 <!DOCTYPE html>
 <html>
-    <head>
-          <meta charset="utf-8">
-          <meta name="viewport" content="width=device-width">
-          <title>Mockcase converter</title>
-          <link href="style.css" rel="stylesheet" type="text/css" />
-    </head>
-    <body>
-        <form>
-            <label for="textInp">Enter text:</label>
-            <input type="text" id="textInp">
-            <br>
-            <input type="submit" id="submitBtn" value="Generate">
-            <button type="button" id="copyBtn">Copy</button>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>mOcKcAsE gEnErAtOr</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <main class="container">
+        <h1>mOcKcAsE</h1>
+        <p class="subtitle">tYpE hErE tO mAkE a pOiNt</p>
+
+        <form id="converterForm">
+            <div class="input-group">
+                <input type="text" id="textInp" placeholder="Type something here..." autocomplete="off">
+            </div>
+            <div class="button-group">
+                <input type="submit" id="submitBtn" value="Generate">
+                <button type="button" id="copyBtn">Copy</button>
+            </div>
         </form>
-        <div id="out"></div>
-        <script src="script.js"></script>
-    </body>
+
+        <div id="out" class="output-area"></div>
+    </main>
+    <script src="script.js"></script>
+</body>
+
 </html>
