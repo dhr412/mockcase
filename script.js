@@ -1,16 +1,22 @@
 function mockcase(str) {
-    const arr = [...str];
+    const arr = [...str.toLowerCase()];
     const letters = arr
         .map((c, i) => c !== " " ? i : null)
         .filter(i => i !== null);
 
     for (let i = 1; i < letters.length;) {
-        arr[letters[i]] = arr[letters[i]].toUpperCase();
+        const idx = letters[i];
+
+        if (!(idx === 0 || arr[idx - 1] === " ")) {
+            arr[idx] = arr[idx].toUpperCase();
+        }
+
         i += Math.floor(Math.random() * 2) + 2;
     }
 
     return arr.join("");
 }
+
 const output = document.querySelector("#out");
 const button = document.querySelector("#submitBtn");
 const input = document.querySelector("#textInp");
