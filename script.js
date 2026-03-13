@@ -1,28 +1,15 @@
 function mockcase(str) {
-    const strarr = [...str];
-    if (!str.includes(" ")) {
-        const randstp = Math.floor(Math.random() * 2) + 2;
-        for (let i = 1; i < strarr.length; i += randstp) {
-            strarr[i] = strarr[i].toUpperCase();
-        }
+    const arr = [...str];
+    const letters = arr
+        .map((c, i) => c !== " " ? i : null)
+        .filter(i => i !== null);
+
+    for (let i = 1; i < letters.length;) {
+        arr[letters[i]] = arr[letters[i]].toUpperCase();
+        i += Math.floor(Math.random() * 2) + 2;
     }
-    else {
-        let randstp = Math.floor(Math.random() * 2) + 2;
-        for (let i = 1; i < strarr.length; i += randstp) {
-            if (strarr[i] !== " ") {
-                strarr[i] = strarr[i].toUpperCase();
-            }
-            else {
-                if (!(randstp < 4))
-                    randstp -= 1;
-                else
-                    randstp += 1;
-                strarr[i] = strarr[i].toUpperCase();
-            }
-            randstp = Math.floor(Math.random() * 2) + 2;
-        }
-    }
-    return strarr.join("");
+
+    return arr.join("");
 }
 const output = document.querySelector("#out");
 const button = document.querySelector("#submitBtn");
