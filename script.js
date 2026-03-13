@@ -1,8 +1,5 @@
 function mockcase(str) {
-    const strarr = [];
-    for (let x of str) {
-        strarr.push(x);
-    }
+    const strarr = [...str];
     if (!str.includes(" ")) {
         const randstp = Math.floor(Math.random() * 2) + 2;
         for (let i = 1; i < strarr.length; i += randstp) {
@@ -25,11 +22,7 @@ function mockcase(str) {
             randstp = Math.floor(Math.random() * 2) + 2;
         }
     }
-    let finstr = "";
-    for (let ele of strarr) {
-        finstr += ele;
-    }
-    return finstr;
+    return strarr.join("");
 }
 const output = document.querySelector("#out");
 const button = document.querySelector("#submitBtn");
