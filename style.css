@@ -4,13 +4,24 @@ body {
     padding: 0;
     height: 100vh;
 }
-input[type="submit"] {
+input[type="submit"], #copyBtn {
     background-color: #007bff;
     color: #fff;
     border: none;
     padding: 10px 20px;
     border-radius: 10px;
     cursor: pointer;
+    font-size: 16px;
+    margin-left: 5px;
+}
+#copyBtn {
+    background-color: #6c757d;
+}
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+#copyBtn:hover {
+    background-color: #5a6268;
 }
 #textInp {
     width: 200px;
